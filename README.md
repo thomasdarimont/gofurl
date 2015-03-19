@@ -1,7 +1,7 @@
 URL shortener service
 =====================
 
-Example application demonstrating micro service architecture and SaaS deployment using Spring
+Example application demonstrating micro service architecture and PaaS deployment using Spring
 Boot and Heroku.
 
 
@@ -97,6 +97,22 @@ Push code changes to Heroku and trigger slug build:
 ```shell
 git push heroku master
 ```
+
+
+### Performance testing
+
+Directory `loadtests` contains JMeter test plan and sample data for performance testing. JMeter and
+[StandardSet](http://jmeter-plugins.org/wiki/StandardSet/) plugin is required to run the plan.
+
+The plan contains `variables` section where the host and protocol can be defined. The file
+`urls.csv` contains a list of URLs that will be posted to the shortener service in a sampler loop.
+The URL shortener responds with JSON containing the shortened hash. The hash value is extracted and
+additional requests to redirect and query for stats of the given hash are sampled. So a single URL
+will result one POST request and two GET requests to the service.
+
+Test run from local office to single Heroku 1X dyno using free plan of Mongolab with total 240
+threads hopping 60 thread steps and holding max load for 80 seconds resulted peak performance
+around 1000 requests/sec.
 
 
 ### License
