@@ -101,4 +101,4 @@ git push heroku master
 
 ### License
 
-The project gofurl is licensed under New BSD License. See LICENSE.BSD for details.
+The project gofurl is licensed under the New BSD License. See LICENSE.BSD for details.
