@@ -1,0 +1,26 @@
+spring:
+    data:
+        mongodb:
+            uri: mongodb://localhost/gofurl
+    jackson:
+        serialization:
+            write_dates_as_timestamps: false
+
+server:
+    port: 8080
+
+---
+
+spring:
+    profiles: heroku
+    data:
+        mongodb:
+            uri: ${MONGOLAB_URI}
+
+server:
+    port: ${PORT}
+
+endpoints:
+    enabled: false
+    health.enabled: true
+    info.enabled: true
