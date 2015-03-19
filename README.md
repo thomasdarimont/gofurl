@@ -98,3 +98,7 @@ Push code changes to Heroku and trigger slug build:
 git push heroku master
 ```
 
+
+### License
+
+The project gofurl is licensed under New BSD License. See LICENSE.BSD for details.
