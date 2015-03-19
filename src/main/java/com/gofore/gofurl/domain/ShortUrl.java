@@ -3,7 +3,6 @@ package com.gofore.gofurl.domain;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Optional;
@@ -14,7 +13,6 @@ public class ShortUrl {
     @Id
     private String hash;
 
-    @Indexed(unique = true)
     private String url;
 
     private Integer saves;
