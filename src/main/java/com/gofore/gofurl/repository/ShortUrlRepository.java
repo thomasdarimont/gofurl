@@ -14,7 +14,7 @@ import java.util.Optional;
 @Repository
 public class ShortUrlRepository {
 
-    private MongoOperations mongo;
+    private final MongoOperations mongo;
 
     @Autowired
     public ShortUrlRepository(MongoOperations mongo) {

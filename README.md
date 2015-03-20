@@ -1,8 +1,8 @@
 URL shortener service
 =====================
 
-Example application demonstrating micro service architecture and PaaS deployment using Spring
-Boot and Heroku.
+Example application demonstrating microservices architecture and PaaS using
+[Spring Boot](http://projects.spring.io/spring-boot/) and [Heroku](https://www.heroku.com/).
 
 
 ### Application architecture
