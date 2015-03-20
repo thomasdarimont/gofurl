@@ -38,7 +38,7 @@ public class UrlShortenerResource {
 
     @RequestMapping(value = "/{hash}/stats", method = RequestMethod.GET)
     public @ResponseBody ShortUrl stats(@PathVariable String hash) {
-        return shortUrlRepository.find(hash)
+        return shortUrlRepository.findByHash(hash)
                 .orElseThrow(UrlNotFoundException::new);
     }
 }
